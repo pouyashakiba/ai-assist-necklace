@@ -1,0 +1,13 @@
+.venv/
+build/
+models/
+backups/
+__pycache__/
+*.log
+*.pid
+Mac-handoff.zip
+.DS_Store
+xcuserdata/
+DerivedData/
+.env
+.env.*

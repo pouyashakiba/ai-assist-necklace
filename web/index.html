@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>همراه کوچک · آزمایشگاه صدا</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body>
+<header><a class="brand" href="/" aria-label="همراه کوچک"><span class="brand-mark">:ᴗ</span><span>همراه کوچک<small dir="ltr">LITTLE COMPANION</small></span></a><div class="header-tag"><span class="dot"></span> پردازش روی ESP32-S3</div></header>
+<main>
+<div class="intro"><div><p class="eyebrow">یک همراه، با کمی شخصیت</p><h1>صداتو می‌شنوم<span>، اینجام.</span></h1><p>آزمایشگاه دستیار صوتی مستقل؛ صدای دستگاه تو، پردازش روی برد، یک چهرهٔ کوچک.</p></div><span class="version" dir="ltr">COMPANION LAB / 01</span></div>
+<div class="workspace">
+<section class="companion" aria-label="نمایشگر مجازی ربات">
+ <div class="stage-top"><span class="stage-label">پیش‌نمایش نمایشگر</span><span class="chip" dir="ltr">320 × 172</span></div>
+ <div class="pendant"><div class="screen"><canvas id="face" width="640" height="344" role="img" aria-label="چهرهٔ ربات در حالت عادی"></canvas></div><span class="pendant-led"></span></div>
+ <div class="mood"><span class="dot"></span><span id="moodLabel">آمادهٔ آشنایی</span></div>
+ <div class="wave" aria-hidden="true" id="wave"></div>
+ <button id="talk" class="primary talk" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg><span>شروع صحبت</span></button>
+ <p id="recordHint" class="stage-hint">اول برد را متصل کن؛ بعد دسترسی میکروفون را بده.</p>
+ <div class="stage-footer"><span id="lcdState">LCD فیزیکی: در انتظار اتصال</span><span>صدا: میکروفون و اسپیکر مرورگر</span></div>
+</section>
+<aside>
+ <section class="panel"><div class="section-heading"><h2>اتصال به همراه</h2><span id="connectionBadge" class="badge">متصل نیست</span></div><p>برد را با USB به همین دستگاه وصل کن.</p><label for="port">پورت برد</label><div class="connection-controls"><select id="port"><option value="">در حال جست‌وجو…</option></select><button id="connect" class="secondary">اتصال</button><button id="refresh" class="icon-button" aria-label="جست‌وجوی دوباره پورت‌ها">↻</button></div><dl class="stats"><div><dt>پردازنده</dt><dd dir="ltr">ESP32-S3</dd></div><div><dt>حافظهٔ PSRAM</dt><dd id="ram" dir="ltr">—</dd></div><div><dt>فرمان‌های آموزش‌دیده</dt><dd id="trainedCount">۰ از ۱۲</dd></div></dl><p class="note">این صفحه فقط پل صدا و تصویر است. تشخیص فرمان و انتخاب پاسخ روی برد انجام می‌شود.</p></section>
+ <section class="panel conversation"><div class="section-heading"><h2>آخرین گفت‌وگو</h2><button id="clearLog" class="text-button">پاک‌کردن</button></div><div id="log" role="log" aria-live="polite"><div class="empty-log"><span class="mini-face">:ᴗ</span><p>اولین سلام، شروع یک آشنایی است.</p><small>فرمان‌ها را آموزش بده و با من حرف بزن.</small></div></div></section>
+</aside>
+</div>
+<div id="notice" class="notice" role="status" aria-live="polite">برای شروع، برد را متصل کن و حداقل دو فرمان را هرکدام دو بار آموزش بده.</div>
+<section class="expressions"><div class="section-heading"><div><p class="eyebrow">یک صورت، دوازده حس</p><h2>حال و هوای همراه</h2></div><label class="toggle"><input type="checkbox" id="autoMood" checked> حالت خودکار هنگام گفت‌وگو</label></div><div id="expressionGrid" class="expression-grid"></div></section>
+<section class="training panel"><div class="section-heading"><div><p class="eyebrow">یادگیری با صدای خودت</p><h2>فرمان‌های صوتی</h2></div><span class="badge">کاملاً آفلاین بعد از نصب</span></div><p>این نسخه، عبارت‌های کوتاه و از پیش تعریف‌شده را می‌شناسد. برای هر فرمان سه نمونه با صدای طبیعی ضبط کن. هر ضبط ۲٫۵ ثانیه است؛ بلافاصله بعد از شروع حرف بزن. حداقل دو فرمان باید هرکدام دو نمونه داشته باشند.</p><div id="commandGrid" class="command-grid"></div><details><summary>دربارهٔ تشخیص صدا و استفادهٔ مستقل</summary><p>تشخیص، با مقایسهٔ ویژگی‌های صوتی MFCC و DTW روی خود ESP32-S3 انجام می‌شود و به صدای آموزش‌دهنده وابسته است. این روش تبدیل گفتار به متن یا مکالمهٔ آزاد فارسی نیست. دقت واقعی پس از آموزش با میکروفون شما مشخص می‌شود. برای کار بدون کامپیوتر، میکروفون I2S و آمپلی‌فایر/اسپیکر لازم است؛ راهنمای اتصال در README پروژه است. سرویس کامپیوتر فقط USB و فایل‌های این صفحه را منتقل می‌کند.</p><p>مرورگر برای میکروفون به localhost یا HTTPS نیاز دارد. بازکردن آدرس HTTP کامپیوتر روی گوشی کافی نیست. هیچ سرویس تشخیص گفتار ابری استفاده نمی‌شود.</p></details></section>
+<footer><span>طراحی چهره بر اساس تصاویر مرجع تو</span><span dir="ltr">LOCAL VOICE · A LITTLE MORE HUMAN</span></footer>
+</main><script src="/assets/face.js"></script><script src="/assets/app.js"></script>
+</body></html>

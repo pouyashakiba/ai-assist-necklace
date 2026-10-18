@@ -1,0 +1,62 @@
+{
+  "initial_status": {
+    "ok": true,
+    "firmware": "little-companion-1.0",
+    "chip": "ESP32-S3",
+    "psram": 8388608,
+    "heap": 147432,
+    "lcd": "off",
+    "face": "neutral",
+    "hardware_audio": false,
+    "storage": true,
+    "threshold": 1.6,
+    "trained": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "reply_audio": "13/13 WAVs byte-identical to embedded originals",
+  "training": "two MFCC templates for each of two synthesized Persian phrases",
+  "recognition": [
+    0,
+    1
+  ],
+  "silence": "rejected",
+  "reboot_persistence": "passed",
+  "final_status": {
+    "ok": true,
+    "firmware": "little-companion-1.0",
+    "chip": "ESP32-S3",
+    "psram": 8388608,
+    "heap": 147324,
+    "lcd": "off",
+    "face": "neutral",
+    "hardware_audio": false,
+    "storage": true,
+    "threshold": 1.6,
+    "trained": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

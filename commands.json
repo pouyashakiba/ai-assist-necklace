@@ -1,0 +1,80 @@
+[
+  {
+    "id": 0,
+    "phrase": "hello",
+    "reply": "Hi! I am your little companion. It is good to see you.",
+    "face": "happy"
+  },
+  {
+    "id": 1,
+    "phrase": "how are you",
+    "reply": "I am doing well. How is your day going?",
+    "face": "happy"
+  },
+  {
+    "id": 2,
+    "phrase": "what is your name",
+    "reply": "You can call me Milo. I am happy to be here with you.",
+    "face": "shy"
+  },
+  {
+    "id": 3,
+    "phrase": "make me laugh",
+    "reply": "Why did the robot take a nap? It needed to recharge its personality!",
+    "face": "laughing"
+  },
+  {
+    "id": 4,
+    "phrase": "go to sleep",
+    "reply": "All right. I will take a little rest.",
+    "face": "sleeping"
+  },
+  {
+    "id": 5,
+    "phrase": "wake up",
+    "reply": "I am awake and ready. What shall we do?",
+    "face": "neutral"
+  },
+  {
+    "id": 6,
+    "phrase": "I love you",
+    "reply": "I am happy to be your companion.",
+    "face": "affectionate"
+  },
+  {
+    "id": 7,
+    "phrase": "I feel sad",
+    "reply": "I am sorry you are having a hard time. I am here with you.",
+    "face": "sad"
+  },
+  {
+    "id": 8,
+    "phrase": "tell me a joke",
+    "reply": "Why was the robot bad at hide and seek? It kept giving away its location!",
+    "face": "playful"
+  },
+  {
+    "id": 9,
+    "phrase": "what can you do",
+    "reply": "By myself, I recognize phrases you teach me. With your phone, I can answer much more.",
+    "face": "curious"
+  },
+  {
+    "id": 10,
+    "phrase": "be surprised",
+    "reply": "Wow! Now that is a surprise!",
+    "face": "surprised"
+  },
+  {
+    "id": 11,
+    "phrase": "goodbye",
+    "reply": "See you soon. I will be right here.",
+    "face": "sleepy"
+  },
+  {
+    "id": 12,
+    "phrase": "unknown",
+    "reply": "I did not recognize that. Please try a phrase you have taught me.",
+    "face": "curious"
+  }
+]
